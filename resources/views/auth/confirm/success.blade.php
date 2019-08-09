@@ -1,0 +1,35 @@
+@extends('layouts.verified')
+@section('auth')
+    <div class="col-6 confirm_container">
+        <div class="confirm_header">
+            @if(session()->has('message'))
+                {{session('message')}}
+            @endif
+        </div>
+        <div class="confirm_content">
+
+            <div class="email_form">
+                <div>
+                    <label style="padding: 10px 0;">E-mail:</label>
+                </div>
+                <div>
+                    <label class="email_success">{{$user->email}}</label>
+                </div>
+                <div>
+                    <label style="padding: 10px 0;color: green;">Подтверждён</label>
+                </div>
+
+            </div>
+            <div class="email_form_buttons_success">
+                <form action="{{url('/register/success')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="id" value="{{$user->id}}">
+                    <button type="submit" style="width: 120px;margin-right: 15px" class="btn btn-success">Далее</button>
+                    Шаг 3 из 3
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+@endsection

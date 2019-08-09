@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Bureau";
+    src: url("../fonts/beermoney.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Hebar";
+    src: url("../fonts/17355.otf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+}
